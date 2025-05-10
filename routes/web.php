@@ -33,6 +33,8 @@ use App\Http\Controllers\ClusterController;
 use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\ProyekUmumController;
 use App\Http\Controllers\PenyesuaianBarangController;
+use App\Http\Controllers\PindahBarangController;
+use App\Models\PindahBarang;
 
 /*
 |--------------------------------------------------------------------------
@@ -389,11 +391,23 @@ Route::controller(PenyesuaianBarangController::class)->group(function () {
     Route::get('penyesuaian/list/page', 'daftarPenyesuaian')->middleware('auth')->name('penyesuaian/list/page');
     Route::get('penyesuaian/add/new', 'tambahPenyesuaian')->middleware('auth')->name('penyesuaian/add/new');
     Route::post('form/penyesuaian/save', 'simpanPenyesuaian')->middleware('auth')->name('form/penyesuaian/save');
-    Route::get('/penyesuaian/edit/{id}/{penyesuaian_id}', 'editPenyesuaian')->middleware('auth')->name('penyesuaian/edit');
-    Route::post('/penyesuaian/update/{id}/{penyesuaian_id}', 'updatePenyesuaian')->middleware('auth')->name('penyesuaian/update');
+    Route::get('/penyesuaian/edit/{id}/{no_penyesuaian}', 'editPenyesuaian')->middleware('auth')->name('penyesuaian/edit');
+    Route::post('/penyesuaian/update/{id}', 'updatePenyesuaian')->middleware('auth')->name('penyesuaian/update');
     Route::post('/penyesuaian/delete', 'hapusPenyesuaian')->middleware('auth')->name('penyesuaian/delete');
     Route::get('get-penyesuaian-data', 'dataPenyesuaian')->name('get-penyesuaian-data');
     // (opsional) API untuk ambil data barang
     Route::get('/barang/search', 'searchBarang')->middleware('auth')->name('barang/search');
 });
 
+
+Route::controller(PindahBarangController::class)->group(function () {
+    Route::get('pindahbarang/list/page', 'daftarPindahBarang')->middleware('auth')->name('pindahbarang/list/page');
+    Route::get('pindahbarang/add/new', 'tambahPindahBarang')->middleware('auth')->name('pindahbarang/add/new');
+    Route::post('form/pindahbarang/save', 'simpanPindahBarang')->middleware('auth')->name('form/pindahbarang/save');
+    Route::get('/pindahbarang/edit/{id}/{no_pindah}', 'editPindahBarang')->middleware('auth')->name('pindahbarang/edit');
+    Route::post('/pindahbarang/update/{id}', 'updatePindahBarang')->middleware('auth')->name('pindahbarang/update');
+    Route::post('/pindahbarang/delete', 'hapusPindahBarang')->middleware('auth')->name('pindahbarang/delete');
+    Route::get('get-pindahbarang-data', 'dataPindahBarang')->name('get-pindahbarang-data');
+    // (opsional) API untuk ambil data barang
+    Route::get('/barang/search', 'searchBarang')->middleware('auth')->name('barang/search');
+});
