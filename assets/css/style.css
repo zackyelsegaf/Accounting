@@ -4282,11 +4282,27 @@ card-title {
 .buttonedit1 {
     float: left;
     font-size: .9rem;
-    border-radius: 10px;
+    border-radius: 8px;
     width: fit-content;
-    padding: 10px 25px 10px 25px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    float: right;
+    padding: 8px;
     background: #F76303;
     border-color: #F76303;
+}
+
+.buttonedit2 {
+    float: left;
+    font-size: .9rem;
+    border-radius: 8px;
+    width: fit-content;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    float:right;
+    padding: 8px 17px;
+    background: #F7374F;
+    border-color: #F7374F;
 }
 
 .veiwbutton {
@@ -6914,6 +6930,10 @@ input:checked+.slider:before {
 #KonsumenList td,
 #ProyekUmumList th,
 #ProyekUmumList td,
+#PenyesuaianList th,
+#PenyesuaianList td,
+#PindahBarangList th,
+#PindahBarangList td,
 #KategoriBarangList th,
 #KategoriBarangList td {
     padding: 4px 8px !important;
